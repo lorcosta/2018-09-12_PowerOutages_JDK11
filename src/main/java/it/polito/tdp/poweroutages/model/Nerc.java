@@ -1,9 +1,15 @@
 package it.polito.tdp.poweroutages.model;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Nerc {
 	private int id;
 	private String value;
-
+	private Boolean donazioneInCorso=false;
+	private List<Donazione> listDonazioni=new ArrayList<>();
+	
 	public Nerc(int id, String value) {
 		this.id = id;
 		this.value = value;
@@ -52,5 +58,21 @@ public class Nerc {
 		StringBuilder builder = new StringBuilder();
 		builder.append(value);
 		return builder.toString();
+	}
+
+	public Boolean getDonazioneInCorso() {
+		return donazioneInCorso;
+	}
+
+	public void setDonazioneInCorso(Boolean donazioneInCorso) {
+		this.donazioneInCorso = donazioneInCorso;
+	}
+
+	public List<Donazione> getListRicevitoriDonazioni() {
+		return listDonazioni;
+	}
+
+	public void addListRicevitoriDonazioni(Nerc ricevitore,LocalDateTime data) {
+		this.listDonazioni.add(new Donazione(this,ricevitore,data));
 	}
 }

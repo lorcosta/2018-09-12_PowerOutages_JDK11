@@ -15,9 +15,9 @@ public class TestDAO {
 			System.err.println("Test FAILED");
 		}
 
-		PowerOutagesDAO dao = new PowerOutagesDAO();
+		//PowerOutagesDAO dao = new PowerOutagesDAO();
 
-		System.out.println(dao.loadAllNercs());
+		//System.out.println(dao.loadAllNercs());
 	}
 
 }
